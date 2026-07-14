@@ -21,7 +21,7 @@ const ENV = Object.freeze({
     api_key: process.env.CLOUDINARY_API_KEY,
     secret_key: process.env.CLOUDINARY_SECRECT_KEY,
   },
-  url: process.env.FRONTEND_URL || "http://localhost:5173",
+  url: process.env.FRONTEND_URL,
 });
 
 export default ENV;
