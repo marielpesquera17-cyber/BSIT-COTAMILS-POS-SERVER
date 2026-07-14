@@ -2,13 +2,10 @@ import pg from "pg";
 import ENV from "../utils/env.js";
 
 const { Pool } = pg;
-const { host, port, user, password, database_name: database } = ENV.database;
+
 const db = new Pool({
-  host,
-  port,
-  user,
-  password,
-  database,
+  connectionString: ENV.database_url, 
+  ssl: ENV.server.node_env === "production" ? { rejectUnauthorized: false } : false,
 });
 
 const checkConnection = async () => {
